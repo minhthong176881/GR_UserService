@@ -6,6 +6,27 @@ service UserMicroService {
   rpc Login (LoginRequest) returns (LoginResponse);
 
   rpc Register (RegisterRequest) returns (RegisterResponse);
+  
+  rpc GetAll (GetAllRequest) returns (GetAllResponse);
+}
+
+message User {
+  string id = 1;
+  string username = 2;
+  string password = 3;
+  string firstName = 4;
+  string lastName = 5;
+  string email = 6;
+  string phoneNumber = 7;
+  int64 gender = 8;
+  string dateOfBirth = 9;
+  string address = 10;
+  string addressOfBirth = 11;
+  string nationality = 12;
+  string identityNumber = 13;
+  int64  isActive = 14;
+  string roleId = 15;
+  string createdAt = 16;
 }
 
 message LoginRequest {
@@ -28,4 +49,10 @@ message RegisterRequest {
 
 message RegisterResponse {
   bool success = 1;
+}
+
+message GetAllRequest {}
+
+message GetAllResponse {
+  repeated User users = 1;
 }

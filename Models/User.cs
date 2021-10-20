@@ -12,15 +12,15 @@ namespace UserService.Models
         public Guid RoleId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public bool Gender { get; set; }
+        public int Gender { get; set; }
         public string Address { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string AddressOfBirth { get; set; }
         public string Nationality { get; set; }
         public string IdentityNumber { get; set; }
-        public bool IsActive { get; set; }
-        public bool IsDeleted { get; set; }
-        public bool IsEmailConfirmed { get; set; }
+        public int IsActive { get; set; }
+        // public bool IsDeleted { get; set; }
+        // public bool IsEmailConfirmed { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }

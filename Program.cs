@@ -23,7 +23,7 @@ namespace UserService
         {
             var factory = new ConnectionFactory()
             {
-                HostName = "172.17.0.3",
+                HostName = "172.17.0.2",
                 Port = AmqpTcpEndpoint.UseDefaultPort
             };
             var connection = factory.CreateConnection();

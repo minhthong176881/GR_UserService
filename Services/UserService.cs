@@ -1,6 +1,9 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Grpc.Core;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using UserService.Data;
@@ -30,12 +33,12 @@ namespace UserService.Services
         }
 
         public override Task<LoginResponse> Login(LoginRequest request, ServerCallContext context)
-        {
-            var user = _context.Users.SingleOrDefault(x => x.UserName == request.Username && x.Password == request.Password);
+        {   
+            var user = _context.Users.SingleOrDefault(x => x.Username == request.Username && x.Password == request.Password);
             if (user == null)
                 return Task.FromResult(new LoginResponse
                 {
-                    Token = null
+                    Token = ""
                 });
             return Task.FromResult(new LoginResponse
             {
