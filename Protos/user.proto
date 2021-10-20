@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService";
+
+service UserMicroService {
+  rpc Login (LoginRequest) returns (LoginResponse);
+
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string token = 1;
+}
+
+message RegisterRequest {
+  string firstname = 1;
+  string lastname = 2;
+  string username = 3;
+  string password = 4;
+  string email = 5;
+  string capchaResponse = 6;
+}
+
+message RegisterResponse {
+  bool success = 1;
+}
